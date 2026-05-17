@@ -1,3 +1,4 @@
+import TileImage from './TileImage.jsx';
 import './Header.css';
 
 export default function Header({ currentLabel, onHome, showHomeAction }) {
@@ -10,7 +11,7 @@ export default function Header({ currentLabel, onHome, showHomeAction }) {
         aria-label="Back to home"
       >
         <span className="brand-mark" aria-hidden="true">
-          <span className="brand-mark-han">麻雀</span>
+          <TileImage tileKey="RedDragon" size="sm" decorative />
         </span>
         <span className="brand-text">
           <span className="brand-name">Mahjong Point Counter</span>

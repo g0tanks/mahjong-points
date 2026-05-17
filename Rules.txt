@@ -1,0 +1,20 @@
+| Name on Sheet        | Beginner-Friendly Description                                                               | Points  |
+| -------------------- | ------------------------------------------------------------------------------------------- | ------- |
+| No Flower Tiles      | You finish the game without any flower/season bonus tiles.                                  | +1      |
+| Your Flower Tile(s)  | You have flower tiles that match your seat/wind position.                                   | +1      |
+| Your Wind Pung       | A triplet of your own seat wind (East, South, West, or North).                              | +1      |
+| Round Wind Pung      | A triplet of the current round wind.                                                        | +1      |
+| Each Dragon Pung     | A triplet of Red, Green, or White dragons. Each set gives points separately.                | +1 each |
+| Self Draw            | You draw the winning tile yourself instead of taking another player’s discard.              | +1      |
+| Chicken Hand         | A very basic winning hand with no scoring combinations.                                     | 0       |
+| All Eating, One Pair | All sets are sequences/chows, plus one pair. No triplets.                                   | +1      |
+| All Pung, One Pair   | All sets are triplets/kongs, plus one pair.                                                 | +3      |
+| Seven Pairs          | Your hand consists of seven separate pairs.                                                 | +4      |
+| Mix + Match Suit     | Tiles are mainly from one suit, plus honor tiles (winds/dragons). Also called “half flush.” | +3      |
+| All One Suit         | All tiles come from a single numbered suit only. No honors.                                 | +7      |
+| Small Dragons        | Two dragon triplets plus a pair of the third dragon.                                        | 6       |
+| Big Dragons          | Triplets/kongs of all three dragons (Red, Green, White).                                    | 8       |
+| Small Winds          | Three wind triplets plus a pair of the fourth wind.                                         | 6       |
+| Big Winds            | Triplets/kongs of all four winds.                                                           | 13      |
+| All Honor Tiles      | Every tile is a wind or dragon tile. No numbered suits.                                     | 10      |
+| Thirteen Orphans     | Special hand with one of every terminal/honor tile plus one duplicate.                      | 13      |

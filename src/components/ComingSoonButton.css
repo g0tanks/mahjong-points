@@ -1,0 +1,63 @@
+.coming-soon-btn {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 999px;
+  border: 1px dashed rgba(76, 201, 240, 0.45);
+  background: linear-gradient(
+    135deg,
+    rgba(76, 201, 240, 0.18) 0%,
+    rgba(255, 42, 109, 0.18) 100%
+  );
+  color: var(--text);
+  padding: 12px 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 13px;
+  min-height: 48px;
+  overflow: hidden;
+  cursor: not-allowed;
+  opacity: 0.95;
+}
+
+.coming-soon-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 3.4s ease-in-out infinite;
+}
+
+.coming-soon-label {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+}
+
+.coming-soon-sub {
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  color: var(--sky);
+  text-transform: uppercase;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

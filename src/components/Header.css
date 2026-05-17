@@ -1,0 +1,120 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px clamp(14px, 3vw, 28px);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  background: linear-gradient(
+    180deg,
+    rgba(7, 14, 28, 0.92) 0%,
+    rgba(7, 14, 28, 0.72) 100%
+  );
+  border-bottom: 1px solid rgba(255, 209, 102, 0.16);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: none;
+  border: 0;
+  padding: 4px;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.brand-mark {
+  position: relative;
+  width: 44px;
+  height: 56px;
+  border-radius: 8px;
+  background: linear-gradient(160deg, #faf6e8 0%, #d9cfa8 100%);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.18),
+    0 6px 16px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(255, 209, 102, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-mark::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.brand-mark-han {
+  font-family: var(--font-han);
+  color: #b6202d;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 2.3vw, 20px);
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 0 18px rgba(255, 42, 109, 0.4);
+}
+
+.brand-tagline {
+  margin-top: 4px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.header-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-crumb {
+  font-family: var(--font-display);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--text-dim);
+  padding: 6px 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.header-home-btn {
+  padding: 10px 16px;
+  min-height: 38px;
+  font-size: 12px;
+}
+
+@media (max-width: 540px) {
+  .brand-tagline {
+    display: none;
+  }
+  .header-crumb {
+    display: none;
+  }
+}

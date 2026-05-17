@@ -1,0 +1,35 @@
+.tile-hand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: flex-start;
+}
+
+.tile-hand-set {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.tile-hand-set-tiles {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.tile-hand-set-label {
+  font-family: var(--font-display);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-left: 2px;
+}
+
+.tile-hand-md .tile-hand-set-tiles {
+  gap: 4px;
+}
+
+.tile-hand-md .tile-hand-set-label {
+  font-size: 10px;
+}

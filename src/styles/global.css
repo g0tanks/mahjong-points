@@ -1,0 +1,296 @@
+:root {
+  --bg-0: #050913;
+  --bg-1: #0b1320;
+  --bg-2: #11203a;
+  --felt-1: #0d3a2a;
+  --felt-2: #062018;
+  --surface: rgba(15, 26, 46, 0.85);
+  --surface-strong: rgba(20, 34, 60, 0.96);
+  --border-soft: rgba(255, 209, 102, 0.18);
+  --border-strong: rgba(255, 209, 102, 0.55);
+  --text: #f7f3e8;
+  --text-dim: #c9c2ad;
+  --text-muted: #8a8676;
+  --gold: #ffd166;
+  --gold-strong: #ffcc33;
+  --neon-pink: #ff2a6d;
+  --neon-pink-soft: #ff5b8d;
+  --neon-red: #ef3b3b;
+  --jade: #06d6a0;
+  --jade-soft: #2ee6b6;
+  --sky: #4cc9f0;
+  --danger: #ff4d6d;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 26px rgba(0, 0, 0, 0.35);
+  --glow-gold: 0 0 24px rgba(255, 209, 102, 0.45);
+  --glow-pink: 0 0 22px rgba(255, 42, 109, 0.45);
+  --glow-jade: 0 0 22px rgba(6, 214, 160, 0.4);
+  --font-display: 'Russo One', 'Cinzel', 'Bebas Neue', 'Inter', system-ui, sans-serif;
+  --font-han: 'Noto Serif TC', 'Songti SC', 'Microsoft JhengHei', serif;
+  --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(ellipse at top, rgba(255, 42, 109, 0.18), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(6, 214, 160, 0.12), transparent 55%),
+    radial-gradient(circle at 20% 30%, rgba(255, 209, 102, 0.08), transparent 40%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 60%, #02060f 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  overflow-x: clip;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.015) 0,
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(16px, 3vw, 32px) clamp(14px, 3vw, 28px) 96px;
+}
+
+.app-footer {
+  padding: 18px clamp(14px, 3vw, 28px) 28px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+.app-footer p + p {
+  margin-top: 6px;
+}
+
+.app-footer-credit {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  margin: 0 0 0.4em;
+  color: var(--text);
+}
+
+p {
+  margin: 0 0 0.8em;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+a {
+  color: var(--gold);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+[role='button']:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.btn {
+  --btn-bg: var(--surface-strong);
+  --btn-border: var(--border-strong);
+  --btn-text: var(--text);
+  --btn-shadow: var(--shadow-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 14px 24px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 14px;
+  box-shadow: var(--btn-shadow);
+  transition: transform 120ms ease, box-shadow 200ms ease, background 200ms ease,
+    color 200ms ease;
+  min-height: 48px;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-primary {
+  --btn-bg: linear-gradient(135deg, #ff2a6d 0%, #ff7a3d 100%);
+  --btn-border: transparent;
+  --btn-text: #fff;
+  box-shadow: 0 10px 24px rgba(255, 42, 109, 0.35), var(--glow-pink);
+}
+
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 14px 32px rgba(255, 42, 109, 0.45), 0 0 32px rgba(255, 42, 109, 0.55);
+}
+
+.btn-gold {
+  --btn-bg: linear-gradient(135deg, #ffd166 0%, #ff9933 100%);
+  --btn-border: transparent;
+  --btn-text: #1d1300;
+  box-shadow: 0 10px 24px rgba(255, 153, 51, 0.35), var(--glow-gold);
+}
+
+.btn-jade {
+  --btn-bg: linear-gradient(135deg, #06d6a0 0%, #1b9aaa 100%);
+  --btn-border: transparent;
+  --btn-text: #052018;
+  box-shadow: 0 10px 24px rgba(6, 214, 160, 0.3), var(--glow-jade);
+}
+
+.btn-ghost {
+  --btn-bg: rgba(255, 255, 255, 0.04);
+  --btn-border: rgba(255, 255, 255, 0.18);
+  --btn-text: var(--text);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-dim);
+}
+
+.tag.tag-small {
+  color: var(--jade-soft);
+  border-color: rgba(6, 214, 160, 0.4);
+}
+
+.tag.tag-medium {
+  color: var(--gold);
+  border-color: rgba(255, 209, 102, 0.45);
+}
+
+.tag.tag-big {
+  color: var(--neon-pink-soft);
+  border-color: rgba(255, 42, 109, 0.5);
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.divider-glow {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0,
+    rgba(255, 209, 102, 0.4) 30%,
+    rgba(255, 42, 109, 0.55) 50%,
+    rgba(6, 214, 160, 0.4) 70%,
+    transparent 100%
+  );
+  margin: 26px 0;
+  border: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

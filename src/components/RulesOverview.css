@@ -1,0 +1,47 @@
+.rules-overview {
+  margin-top: 36px;
+}
+
+.rules-overview-head {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.rules-overview-head h2 {
+  font-size: clamp(26px, 4vw, 38px);
+}
+
+.rules-overview-head p {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.rules-overview-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.rules-group-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.rules-group-head h3 {
+  font-size: clamp(20px, 2.5vw, 26px);
+  margin: 0;
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 540px) {
+  .rules-grid {
+    grid-template-columns: 1fr;
+  }
+}

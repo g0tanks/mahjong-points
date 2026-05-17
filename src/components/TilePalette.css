@@ -1,0 +1,118 @@
+.palette {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 18px 22px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(20, 30, 54, 0.92) 0%, rgba(11, 19, 36, 0.92) 100%);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-md);
+}
+
+.palette-head h2 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.palette-head p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.palette-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.palette-section-title {
+  font-family: var(--font-display);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.palette-section-bonus .palette-section-title {
+  color: var(--sky);
+}
+
+.palette-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.palette-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.palette-group-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.palette-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.palette-tile {
+  position: relative;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 4px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 160ms ease, border-color 160ms ease,
+    opacity 160ms ease;
+}
+
+.palette-tile:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35), var(--glow-gold);
+}
+
+.palette-tile:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.palette-tile:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.palette-tile.has-count {
+  border-color: rgba(6, 214, 160, 0.55);
+  background: rgba(6, 214, 160, 0.08);
+}
+
+.palette-tile-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--jade);
+  color: #052018;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(6, 214, 160, 0.55);
+}

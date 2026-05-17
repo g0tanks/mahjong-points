@@ -160,21 +160,6 @@ export default function AutoCounter({
       </div>
 
       <div className="auto-counter-grid">
-        <div className="auto-counter-main">
-          <HandTray
-            handTiles={handTiles}
-            bonusTiles={bonusTiles}
-            onRemoveHand={handleRemoveHand}
-            onRemoveBonus={handleRemoveBonus}
-            onClear={handleClear}
-          />
-          <TilePalette
-            handCounts={handCounts}
-            bonusCounts={bonusCounts}
-            onAdd={handleAdd}
-          />
-        </div>
-
         <aside className="auto-counter-score">
           <ScorePanel
             result={result}
@@ -227,6 +212,21 @@ export default function AutoCounter({
             before recording the final score.
           </p>
         </aside>
+
+        <div className="auto-counter-main">
+          <HandTray
+            handTiles={handTiles}
+            bonusTiles={bonusTiles}
+            onRemoveHand={handleRemoveHand}
+            onRemoveBonus={handleRemoveBonus}
+            onClear={handleClear}
+          />
+          <TilePalette
+            handCounts={handCounts}
+            bonusCounts={bonusCounts}
+            onAdd={handleAdd}
+          />
+        </div>
       </div>
     </section>
   );

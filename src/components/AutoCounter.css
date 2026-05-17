@@ -169,12 +169,12 @@
   color: var(--text);
 }
 
-/* Desktop layout: the score panel is position: fixed to the viewport so it
-   truly stays put while scrolling. The grid reserves space on the right so
-   the main content (palette + hand tray) never runs underneath it. */
+/* Single-column flow: score panel sits above the hand tray and scrolls
+   naturally with the page. */
 .auto-counter-grid {
-  position: relative;
-  padding-right: 340px; /* 320px panel + 20px gutter */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .auto-counter-main {
@@ -184,14 +184,6 @@
 }
 
 .auto-counter-score {
-  position: fixed;
-  top: 96px; /* below the sticky header */
-  /* Align the panel's right edge with the right edge of .app-main content */
-  right: max(28px, calc((100vw - 1180px) / 2 + 28px));
-  width: 320px;
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-  z-index: 20;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -331,26 +323,6 @@
 }
 
 @media (max-width: 900px) {
-  /* Narrow viewports: the panel can't sit beside the content, so it floats
-     across the top of the viewport as a fixed banner with the main content
-     padded down to make room for it. Still position: fixed so it does not
-     scroll with the page. */
-  .auto-counter-grid {
-    display: flex;
-    flex-direction: column;
-    padding-right: 0;
-    padding-top: 220px;
-  }
-  .auto-counter-score {
-    position: fixed;
-    top: 70px;
-    left: 14px;
-    right: 14px;
-    width: auto;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 10;
-  }
   .auto-counter-settings {
     grid-template-columns: 1fr;
   }

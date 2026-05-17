@@ -331,19 +331,25 @@
 }
 
 @media (max-width: 900px) {
+  /* Narrow viewports: the panel can't sit beside the content, so it floats
+     across the top of the viewport as a fixed banner with the main content
+     padded down to make room for it. Still position: fixed so it does not
+     scroll with the page. */
   .auto-counter-grid {
     display: flex;
     flex-direction: column;
     padding-right: 0;
+    padding-top: 220px;
   }
   .auto-counter-score {
-    position: sticky;
+    position: fixed;
     top: 70px;
-    right: auto;
+    left: 14px;
+    right: 14px;
     width: auto;
-    max-height: 60vh;
+    max-height: 200px;
+    overflow-y: auto;
     z-index: 10;
-    order: -1;
   }
   .auto-counter-settings {
     grid-template-columns: 1fr;

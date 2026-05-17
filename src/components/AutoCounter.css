@@ -169,11 +169,12 @@
   color: var(--text);
 }
 
+/* Desktop layout: the score panel is position: fixed to the viewport so it
+   truly stays put while scrolling. The grid reserves space on the right so
+   the main content (palette + hand tray) never runs underneath it. */
 .auto-counter-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 20px;
-  align-items: start;
+  position: relative;
+  padding-right: 340px; /* 320px panel + 20px gutter */
 }
 
 .auto-counter-main {
@@ -183,11 +184,14 @@
 }
 
 .auto-counter-score {
-  position: sticky;
-  top: 24px;
-  align-self: start;
-  max-height: calc(100vh - 48px);
+  position: fixed;
+  top: 96px; /* below the sticky header */
+  /* Align the panel's right edge with the right edge of .app-main content */
+  right: max(28px, calc((100vw - 1180px) / 2 + 28px));
+  width: 320px;
+  max-height: calc(100vh - 120px);
   overflow-y: auto;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -328,11 +332,16 @@
 
 @media (max-width: 900px) {
   .auto-counter-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
   }
   .auto-counter-score {
     position: sticky;
     top: 70px;
+    right: auto;
+    width: auto;
+    max-height: 60vh;
     z-index: 10;
     order: -1;
   }

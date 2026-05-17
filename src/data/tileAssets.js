@@ -1,8 +1,10 @@
 // Map of tile key -> { src, alt }.
-// Files live in public/Tiles/ and are served at /Tiles/<filename>.
-// If a key is missing the TileImage component renders a styled placeholder.
+// Files live in public/Tiles/ and are emitted to dist/Tiles/<filename>.
+// Paths are relative ("./Tiles/...") so the app works when hosted at the
+// site root OR inside a sub-directory on a static (e.g. PHP) host. If a key
+// is missing the TileImage component renders a styled placeholder.
 
-const TILE_BASE = '/Tiles';
+const TILE_BASE = './Tiles';
 
 function suit(prefix, label) {
   const entries = {};

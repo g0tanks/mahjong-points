@@ -13,10 +13,6 @@ export default function RulesOverview() {
       <header className="rules-overview-head">
         <span className="section-eyebrow">Scoring rules</span>
         <h2 id="rules-overview-title">All the scoring patterns</h2>
-        <p>
-          Tap through each card to learn the patterns, then use the manual
-          counter to score a real hand.
-        </p>
       </header>
 
       <div className="rules-overview-groups">

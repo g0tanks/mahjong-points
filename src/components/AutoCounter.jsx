@@ -137,10 +137,6 @@ export default function AutoCounter({
             onChange={setSeatWind}
             showSeatNumber
           />
-          <p className="auto-field-hint">
-            East = 1, South = 2, West = 3, North = 4. Bonus tiles matching
-            your seat number (e.g. seat 1 + Flowers1 or Seasons1) score +1.
-          </p>
         </fieldset>
         <fieldset className="auto-field">
           <legend>Round / table wind</legend>

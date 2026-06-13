@@ -35,7 +35,7 @@ npm run build
 npm run preview   # optional, serves the build locally
 ```
 
-## Deploying to a static host (PHP-only hosting works too)
+## Deploying to a static host
 
 `npm run build` produces a fully static bundle in `dist/`:
 
@@ -50,7 +50,7 @@ dist/
     └── ...
 ```
 
-To deploy, upload the **contents** of `dist/` (not the folder itself) into your web root (`public_html/`, `www/`, `htdocs/`, etc.). Any HTTP server that serves static files will work — Apache, nginx, LiteSpeed, IIS, GitHub Pages, Netlify, Vercel, Cloudflare Pages, S3 + CloudFront, and PHP-only shared hosting all qualify. PHP is never invoked because there is no server-side code; the app runs entirely in the browser.
+To deploy, upload the **contents** of `dist/` (not the folder itself) into your web root (`public_html/`, `www/`, `htdocs/`, etc.). Any HTTP server that serves static files will work — Apache, nginx, LiteSpeed, IIS, GitHub Pages, Netlify, Vercel, Cloudflare Pages, S3 + CloudFront all qualify; the app runs entirely in the browser.
 
 No `.htaccess` rewrites or SPA fallbacks are needed: the app uses a single page with internal view state (`home` / `counter` / `results`), so the browser only ever requests `/`, `/assets/...`, and `/Tiles/...`.
 
